@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is used to track the progress of Trials and POC from original sales request and approval through completion.</description>
+
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Name</formula>
+        <label>Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when the customer has finished all testing of system and/or the system has achieved all success criteria defined for testing.</inlineHelpText>
+        <label>Testing Actual End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Start_Date__c</fullName>
+        <description>Actual date that PeerApp turns operational system over to Customer to begin testing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual date that PeerApp turns operational system over to Customer to begin testing.</inlineHelpText>
+        <label>Testing Actual Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Amount_Paid_by_Customer__c</fullName>
+        <description>How much money is the customer paying us to perform the trial?  Include all services, consulting fees, shipping costs, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How much money is the customer paying us to perform the trial?  Include all services, consulting fees, shipping costs, etc.</inlineHelpText>
+        <label>Amount Paid by Customer</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Status_Code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Master field to control the user visible Approval Status.
+            0 =  Pending
+            1 =  Approved
+            -1 = Rejected</inlineHelpText>
+        <label>Approval Status Code</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( Approval_Status_Code__c = 0, &quot;Pending&quot;, IF(Approval_Status_Code__c = -1, &quot;Rejected&quot;, IF(Approval_Status_Code__c = 1, &quot;Approved&quot;, &quot;Not Submitted&quot;)))</formula>
+        <inlineHelpText>Presents the status of the most current POC/Trial approval request</inlineHelpText>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BHR__c</fullName>
+        <description>Peak BHR (%)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Peak BHR (%)</inlineHelpText>
+        <label>BHR (%)</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Cache_Out_Mbps__c</fullName>
+        <description>Peak cache out in Mbps</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Peak cache out in Mbps</inlineHelpText>
+        <label>Cache Out (Mbps)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cache_Productivity__c</fullName>
+        <description>Peak cache productivity (%)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Peak cache productivity (%)</inlineHelpText>
+        <label>Cache Productivity (%)</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Technical_Point__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The customer contact who is the key point person for the Trial/POC</inlineHelpText>
+        <label>Customer Technical Point</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Trial/POC&apos;s (Customer Technical Point)</relationshipLabel>
+        <relationshipName>Trial_POC_s1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HTTP_QoE__c</fullName>
+        <description>Peak QoE for HTTP in multiple of clear vs. cache (i.e. 4.5x faster)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Peak QoE for HTTP in multiple of clear vs. cache (i.e. 4.5x faster)</inlineHelpText>
+        <label>HTTP QoE</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HW_Provided_By__c</fullName>
+        <externalId>false</externalId>
+        <label>HW Provided By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PeerApp</fullName>
+                    <default>false</default>
+                    <label>PeerApp</label>
+                </value>
+                <value>
+                    <fullName>Partner/Customer</fullName>
+                    <default>false</default>
+                    <label>Partner/Customer</label>
+                </value>
+                <value>
+                    <fullName>Not Sure Yet</fullName>
+                    <default>false</default>
+                    <label>Not Sure Yet</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HW_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>HW Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dell</fullName>
+                    <default>false</default>
+                    <label>Dell</label>
+                </value>
+                <value>
+                    <fullName>IBM - AC Power</fullName>
+                    <default>false</default>
+                    <label>IBM - AC Power</label>
+                </value>
+                <value>
+                    <fullName>IBM - DC Power</fullName>
+                    <default>false</default>
+                    <label>IBM - DC Power</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>H_W_Actual_Ship_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>H/W Actual Ship Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Incoming_Traffic_Mbps__c</fullName>
+        <description>Peak incoming traffic in Mbps</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Peak incoming traffic in Mbps</inlineHelpText>
+        <label>Incoming Traffic (Mbps)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Install_Actual_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Install Actual Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Install_Scheduled_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Install Scheduled Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Installation_Address__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the physical address of where the equipment/software will be physically installed.</inlineHelpText>
+        <label>Installation Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Installation_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How will the System be installed in the network/lab?</inlineHelpText>
+        <label>Integration Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DPI</fullName>
+                    <default>false</default>
+                    <label>DPI</label>
+                </value>
+                <value>
+                    <fullName>PBR</fullName>
+                    <default>false</default>
+                    <label>PBR</label>
+                </value>
+                <value>
+                    <fullName>In Line</fullName>
+                    <default>false</default>
+                    <label>In Line</label>
+                </value>
+                <value>
+                    <fullName>Not sure yet</fullName>
+                    <default>false</default>
+                    <label>Not sure yet</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Installed_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Installed By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PeerApp - Onsite</fullName>
+                    <default>false</default>
+                    <label>PeerApp - Onsite</label>
+                </value>
+                <value>
+                    <fullName>PeerApp - Remote</fullName>
+                    <default>false</default>
+                    <label>PeerApp - Remote</label>
+                </value>
+                <value>
+                    <fullName>Partner/Customer</fullName>
+                    <default>false</default>
+                    <label>Partner/Customer</label>
+                </value>
+                <value>
+                    <fullName>Not sure yet</fullName>
+                    <default>false</default>
+                    <label>Not sure yet</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Installer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Installer</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>contains</operation>
+                <value>Sales Eng</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>contains</operation>
+                <value>Suppo</value>
+            </filterItems>
+            <filterItems>
+                <field>User.IsActive</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Trial_POC_s</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Key_Success_Criteria__c</fullName>
+        <description>Listing of the key criteria the customer is looking to validate and confirm in order to establish that system meets their defined requirement(s).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Listing of the key criteria the customer is looking to validate and confirm in order to establish that system meets their defined requirement(s).</inlineHelpText>
+        <label>Key Success Criteria</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>License_Created_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field should not change over time.  This is the date on which the original license was issued.  For extensions, please change the license expiry date only.</inlineHelpText>
+        <label>License Created Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>License_Expiry_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If there is more than one system on on order (opportunity) then use the earliest license expiry date to populate this field.  This field to trigger internal notifications only.  Master database of license expiration is maintained by Mfg Ops.</inlineHelpText>
+        <label>License Expiry Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Name</formula>
+        <label>Opportunity Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Amount</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Close_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.CloseDate</formula>
+        <label>Opportunity Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Forecast_Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Opportunity__r.Forecast_Category_Banks__c)</formula>
+        <label>Opportunity Qtr Fcst Ctgry</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Owner_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.OwnerId</formula>
+        <inlineHelpText>The opportunity owner id</inlineHelpText>
+        <label>Opportunity Owner ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Partner__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.bl_Partner__r.Name</formula>
+        <label>Opportunity Partner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Opportunity__r.StageName)</formula>
+        <label>Opportunity Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This POC/Trial is associated with which opportunity?</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Trial/POC&apos;s</relationshipLabel>
+        <relationshipName>Trial_POC_s</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>P2P_QoE__c</fullName>
+        <description>Peak QoE for P2P in multiple of clear vs. cache (i.e. 4.5x faster)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Peak QoE for P2P in multiple of clear vs. cache (i.e. 4.5x faster)</inlineHelpText>
+        <label>P2P QoE</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purchase_Made__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Opportunity_Stage__c = &quot;Closed Won&quot;, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Purchase Made</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_Trial_Failed__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If the Trial was not successful, please complete this section so we can know why.</inlineHelpText>
+        <label>Reason Trial Failed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Did not meet Cache Out %</fullName>
+                    <default>false</default>
+                    <label>Did not meet Cache Out %</label>
+                </value>
+                <value>
+                    <fullName>PeerApp System Issues</fullName>
+                    <default>false</default>
+                    <label>PeerApp System Issues</label>
+                </value>
+                <value>
+                    <fullName>Problem with 3rd Party System</fullName>
+                    <default>false</default>
+                    <label>Problem with 3rd Party System</label>
+                </value>
+                <value>
+                    <fullName>Not sufficient Customer Resources</fullName>
+                    <default>false</default>
+                    <label>Not sufficient Customer Resources</label>
+                </value>
+                <value>
+                    <fullName>Other (Please specify in Notes)</fullName>
+                    <default>false</default>
+                    <label>Other (Please specify in Notes)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Requested_Start_Date__c</fullName>
+        <description>Date that customer is requesting the trial or POC begin</description>
+        <externalId>false</externalId>
+        <label>Testing Requested Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_H_W_Ship_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>H/W Scheduled Ship Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Start_Date__c</fullName>
+        <description>Planned and agreed date between PeerApp and Customer for which the system is to go live and handed over to customer to begin testing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Planned and agreed date between PeerApp and Customer for which the system is to go live and handed over to customer to begin testing.</inlineHelpText>
+        <label>Testing Scheduled Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Shipping_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping Cost</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Paid by PeerApp</fullName>
+                    <default>false</default>
+                    <label>Paid by PeerApp</label>
+                </value>
+                <value>
+                    <fullName>Paid by Customer/Partner</fullName>
+                    <default>false</default>
+                    <label>Paid by Customer/Partner</label>
+                </value>
+                <value>
+                    <fullName>Not Sure Yet</fullName>
+                    <default>false</default>
+                    <label>Not Sure Yet</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SiteAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Links to the SiteAccount record where the license is tracked</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Links to the SiteAccount record where the license is tracked</inlineHelpText>
+        <label>Site Account</label>
+        <referenceTo>Site_Account__c</referenceTo>
+        <relationshipLabel>Trial/POC&apos;s</relationshipLabel>
+        <relationshipName>Trial_POC_s</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SiteAcct_License_Created__c</fullName>
+        <externalId>false</externalId>
+        <formula>SiteAccount__r.License_Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>License Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SiteAcct_License_Expiry__c</fullName>
+        <externalId>false</externalId>
+        <formula>SiteAccount__r.License_End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>License Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Storage_Size_TB__c</fullName>
+        <description>Total cache stored (peak) in TB</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total cache stored (peak) in TB</inlineHelpText>
+        <label>Storage Size (TB)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>System_Needed__c</fullName>
+        <externalId>false</externalId>
+        <label>System Configuration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>UB100 - SP</fullName>
+                    <default>false</default>
+                    <label>UB100 - SP</label>
+                </value>
+                <value>
+                    <fullName>UB200 - SP</fullName>
+                    <default>false</default>
+                    <label>UB200 - SP</label>
+                </value>
+                <value>
+                    <fullName>UB5000 - SP</fullName>
+                    <default>false</default>
+                    <label>UB5000 - SP</label>
+                </value>
+                <value>
+                    <fullName>UB5000 - 05</fullName>
+                    <default>false</default>
+                    <label>UB5000 - 05</label>
+                </value>
+                <value>
+                    <fullName>UB5000 - 10</fullName>
+                    <default>false</default>
+                    <label>UB5000 - 10</label>
+                </value>
+                <value>
+                    <fullName>UB5000 - 25</fullName>
+                    <default>false</default>
+                    <label>UB5000 - 25</label>
+                </value>
+                <value>
+                    <fullName>UB5000 - 50</fullName>
+                    <default>false</default>
+                    <label>UB5000 - 50</label>
+                </value>
+                <value>
+                    <fullName>UB5000 - 100</fullName>
+                    <default>false</default>
+                    <label>UB5000 - 100</label>
+                </value>
+                <value>
+                    <fullName>NO CISCO SWITCHES REQUIRED</fullName>
+                    <default>false</default>
+                    <label>NO CISCO SWITCHES REQUIRED</label>
+                </value>
+                <value>
+                    <fullName>SmartFilter</fullName>
+                    <default>false</default>
+                    <label>SmartFilter</label>
+                </value>
+                <value>
+                    <fullName>Other - Describe in Notes</fullName>
+                    <default>false</default>
+                    <label>Other - Describe in Notes</label>
+                </value>
+                <value>
+                    <fullName>Not sure yet</fullName>
+                    <default>true</default>
+                    <label>Not sure yet</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>System_Status__c</fullName>
+        <description>Where is the System at this current moment</description>
+        <externalId>false</externalId>
+        <label>PeerApp H/W Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Yet Sent to Customer</fullName>
+                    <default>true</default>
+                    <label>Not Yet Sent to Customer</label>
+                </value>
+                <value>
+                    <fullName>In Transit to Customer</fullName>
+                    <default>false</default>
+                    <label>In Transit to Customer</label>
+                </value>
+                <value>
+                    <fullName>At Customer</fullName>
+                    <default>false</default>
+                    <label>At Customer</label>
+                </value>
+                <value>
+                    <fullName>Returned from Customer</fullName>
+                    <default>false</default>
+                    <label>Returned from Customer</label>
+                </value>
+                <value>
+                    <fullName>N/A (Software Only)</fullName>
+                    <default>false</default>
+                    <label>N/A (Software Only)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Testing_Expected_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Testing Expected End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Total_Days__c</fullName>
+        <description>Total number of days we processed traffic.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of days we processed traffic.</inlineHelpText>
+        <label>Total Days</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trial_POC_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Trial/POC Notes</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Trial_Status__c</fullName>
+        <description>Select the appropriate stage that the Trial/POC is currently in</description>
+        <externalId>false</externalId>
+        <label>Trial Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Waiting for Customer Approval</fullName>
+                    <default>true</default>
+                    <label>Waiting for Customer Approval</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Customer Scheduling</fullName>
+                    <default>false</default>
+                    <label>Waiting for Customer Scheduling</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Hardware to Arrive</fullName>
+                    <default>false</default>
+                    <label>Waiting for Hardware to Arrive</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Installation</fullName>
+                    <default>false</default>
+                    <label>Waiting for Installation</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Traffic Redirection</fullName>
+                    <default>false</default>
+                    <label>Waiting for Traffic Redirection</label>
+                </value>
+                <value>
+                    <fullName>Trial in Progress - Live Traffic</fullName>
+                    <default>false</default>
+                    <label>Trial in Progress - Live Traffic</label>
+                </value>
+                <value>
+                    <fullName>Trial in Progress - Test Traffic</fullName>
+                    <default>false</default>
+                    <label>Trial in Progress - Test Traffic</label>
+                </value>
+                <value>
+                    <fullName>Trial in Progress - Lab Environment</fullName>
+                    <default>false</default>
+                    <label>Trial in Progress - Lab Environment</label>
+                </value>
+                <value>
+                    <fullName>Trial Suspended Temporarily</fullName>
+                    <default>false</default>
+                    <label>Trial Suspended Temporarily</label>
+                </value>
+                <value>
+                    <fullName>Trial Completed - SUCCESS CRITERIA MET</fullName>
+                    <default>false</default>
+                    <label>Trial Completed - SUCCESS CRITERIA MET</label>
+                </value>
+                <value>
+                    <fullName>Trial Completed - CRITERIA NOT MET</fullName>
+                    <default>false</default>
+                    <label>Trial Completed - CRITERIA NOT MET</label>
+                </value>
+                <value>
+                    <fullName>Trial Completed - CANCELLED</fullName>
+                    <default>false</default>
+                    <label>Trial Completed - CANCELLED</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Trial_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Trial Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Conditional Try and Buy</fullName>
+                    <default>false</default>
+                    <label>Conditional Try and Buy</label>
+                </value>
+                <value>
+                    <fullName>Unconditional Field Trial Only</fullName>
+                    <default>false</default>
+                    <label>Unconditional Field Trial Only</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Trial/POC</label>
+    <listViews>
+        <fullName>Active_POCs_Only</fullName>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Account__c</columns>
+        <columns>NAME</columns>
+        <columns>Installer__c</columns>
+        <columns>Trial_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Opportunity_Amount__c</columns>
+        <columns>Opportunity_Stage__c</columns>
+        <columns>Opportunity_Close_Date__c</columns>
+        <columns>Actual_Start_Date__c</columns>
+        <columns>Actual_End_Date__c</columns>
+        <columns>Testing_Expected_End_Date__c</columns>
+        <columns>License_Expiry_Date__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Trial_Status__c</field>
+            <operation>notContain</operation>
+            <value>Trial Complete,Success Criteria Met,Success Criteria Not Met</value>
+        </filters>
+        <filters>
+            <field>Opportunity_Stage__c</field>
+            <operation>notContain</operation>
+            <value>closed</value>
+        </filters>
+        <label>Active POCs Only</label>
+    </listViews>
+    <listViews>
+        <fullName>Active_Trial_POCs</fullName>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Installer__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Trial_Type__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Opportunity_Amount__c</columns>
+        <columns>Opportunity_Stage__c</columns>
+        <columns>Opportunity_Close_Date__c</columns>
+        <columns>Actual_Start_Date__c</columns>
+        <columns>Actual_End_Date__c</columns>
+        <columns>Testing_Expected_End_Date__c</columns>
+        <columns>Trial_Status__c</columns>
+        <columns>License_Expiry_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Trial_Status__c</field>
+            <operation>notContain</operation>
+            <value>Trial Completed</value>
+        </filters>
+        <label>Active Trial/POCs</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Try_Buys</fullName>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Installer__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Trial_Type__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Opportunity_Amount__c</columns>
+        <columns>Opportunity_Stage__c</columns>
+        <columns>Opportunity_Close_Date__c</columns>
+        <columns>Actual_Start_Date__c</columns>
+        <columns>Actual_End_Date__c</columns>
+        <columns>Testing_Expected_End_Date__c</columns>
+        <columns>Trial_Status__c</columns>
+        <columns>License_Expiry_Date__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Trial_Type__c</field>
+            <operation>equals</operation>
+            <value>Conditional Try and Buy</value>
+        </filters>
+        <label>All Try Buys</label>
+    </listViews>
+    <listViews>
+        <fullName>My_TrialPOCs</fullName>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Installer__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Opportunity_Amount__c</columns>
+        <columns>Opportunity_Stage__c</columns>
+        <columns>Opportunity_Close_Date__c</columns>
+        <columns>Actual_Start_Date__c</columns>
+        <columns>Actual_End_Date__c</columns>
+        <columns>Testing_Expected_End_Date__c</columns>
+        <columns>Trial_Status__c</columns>
+        <columns>License_Expiry_Date__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Trial/POCs</label>
+    </listViews>
+    <listViews>
+        <fullName>Opened_Try_Buys</fullName>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Installer__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Trial_Type__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Opportunity_Amount__c</columns>
+        <columns>Opportunity_Stage__c</columns>
+        <columns>Opportunity_Close_Date__c</columns>
+        <columns>Actual_Start_Date__c</columns>
+        <columns>Actual_End_Date__c</columns>
+        <columns>Testing_Expected_End_Date__c</columns>
+        <columns>Trial_Status__c</columns>
+        <columns>License_Expiry_Date__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Trial_Type__c</field>
+            <operation>equals</operation>
+            <value>Conditional Try and Buy</value>
+        </filters>
+        <filters>
+            <field>Opportunity_Stage__c</field>
+            <operation>notContain</operation>
+            <value>Closed</value>
+        </filters>
+        <label>Opened Try Buys</label>
+    </listViews>
+
+    <nameField>
+        <label>Trial/POC Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Trial/POC&apos;s</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Opportunity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Trial_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>System_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Opportunity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Opportunity_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Opportunity_Close_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Opportunity_Forecast_Category__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>Opportunity__c</searchFilterFields>
+        <searchFilterFields>Opportunity_Amount__c</searchFilterFields>
+        <searchFilterFields>Opportunity_Close_Date__c</searchFilterFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+    </searchLayouts>
+
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Require_Trial_Failure_Reason</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Trial_Status__c , &quot;Success Criteria Not Met&quot;),  ISBLANK(Reason_Trial_Failed__c ))</errorConditionFormula>
+        <errorDisplayField>Reason_Trial_Failed__c</errorDisplayField>
+        <errorMessage>Whenever a Trial Ends without success, you need to explain why the trail was not a success.  Please choose the appropriate reason code.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+
+</CustomObject>
