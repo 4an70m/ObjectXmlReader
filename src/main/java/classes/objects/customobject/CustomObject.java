@@ -40,16 +40,16 @@ public class CustomObject extends Metadata {
         } else {
             this.diffObject((Map<String, Object>) nodeFrom, (Map<String, Object>) nodeTo);
         }
+        return false;
     }
 
     public Boolean diffList(List<Object> nodeFrom, List<Object> nodeTo) {
         System.out.println("List");
+        return false;
     }
 
     public Boolean diffObject(Map<String, Object> nodeFrom, Map<String, Object> nodeTo) {
-        for () {
-
-        }
+        return false;
     }
 
     /*
