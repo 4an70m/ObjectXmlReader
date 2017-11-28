@@ -1,7 +1,7 @@
 package classes.objects.customobject;
 
 import classes.objects.Metadata;
-import classes.objects.customobject.element.ArrayAdapterFactory;
+import classes.objects.customobject.element.adapter.ArrayAdapterFactory;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

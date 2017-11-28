@@ -74,4 +74,180 @@ public final class CustomObjectParsed {
                 ", visibility='" + visibility + '\'' +
                 '}';
     }
+
+    public Boolean getAllowInChatterGroups() {
+        return allowInChatterGroups;
+    }
+
+    public void setAllowInChatterGroups(Boolean allowInChatterGroups) {
+        this.allowInChatterGroups = allowInChatterGroups;
+    }
+
+    public String getCompactLayoutAssignment() {
+        return compactLayoutAssignment;
+    }
+
+    public void setCompactLayoutAssignment(String compactLayoutAssignment) {
+        this.compactLayoutAssignment = compactLayoutAssignment;
+    }
+
+    public String getDeploymentStatus() {
+        return deploymentStatus;
+    }
+
+    public void setDeploymentStatus(String deploymentStatus) {
+        this.deploymentStatus = deploymentStatus;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Boolean getEnableActivities() {
+        return enableActivities;
+    }
+
+    public void setEnableActivities(Boolean enableActivities) {
+        this.enableActivities = enableActivities;
+    }
+
+    public Boolean getEnableBulkApi() {
+        return enableBulkApi;
+    }
+
+    public void setEnableBulkApi(Boolean enableBulkApi) {
+        this.enableBulkApi = enableBulkApi;
+    }
+
+    public Boolean getEnableChangeDataCapture() {
+        return enableChangeDataCapture;
+    }
+
+    public void setEnableChangeDataCapture(Boolean enableChangeDataCapture) {
+        this.enableChangeDataCapture = enableChangeDataCapture;
+    }
+
+    public Boolean getEnableEnhancedLookup() {
+        return enableEnhancedLookup;
+    }
+
+    public void setEnableEnhancedLookup(Boolean enableEnhancedLookup) {
+        this.enableEnhancedLookup = enableEnhancedLookup;
+    }
+
+    public Boolean getEnableFeeds() {
+        return enableFeeds;
+    }
+
+    public void setEnableFeeds(Boolean enableFeeds) {
+        this.enableFeeds = enableFeeds;
+    }
+
+    public Boolean getEnableHistory() {
+        return enableHistory;
+    }
+
+    public void setEnableHistory(Boolean enableHistory) {
+        this.enableHistory = enableHistory;
+    }
+
+    public Boolean getEnableReports() {
+        return enableReports;
+    }
+
+    public void setEnableReports(Boolean enableReports) {
+        this.enableReports = enableReports;
+    }
+
+    public Boolean getEnableSearch() {
+        return enableSearch;
+    }
+
+    public void setEnableSearch(Boolean enableSearch) {
+        this.enableSearch = enableSearch;
+    }
+
+    public Boolean getEnableSharing() {
+        return enableSharing;
+    }
+
+    public void setEnableSharing(Boolean enableSharing) {
+        this.enableSharing = enableSharing;
+    }
+
+    public Boolean getEnableStreamingApi() {
+        return enableStreamingApi;
+    }
+
+    public void setEnableStreamingApi(Boolean enableStreamingApi) {
+        this.enableStreamingApi = enableStreamingApi;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public NameField getNameField() {
+        return nameField;
+    }
+
+    public void setNameField(NameField nameField) {
+        this.nameField = nameField;
+    }
+
+    public String getPluralLabel() {
+        return pluralLabel;
+    }
+
+    public void setPluralLabel(String pluralLabel) {
+        this.pluralLabel = pluralLabel;
+    }
+
+    public String getSharingModel() {
+        return sharingModel;
+    }
+
+    public void setSharingModel(String sharingModel) {
+        this.sharingModel = sharingModel;
+    }
+
+    public String getVisibility() {
+        return visibility;
+    }
+
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+
+    public List<Field> getFields() {
+        return fields;
+    }
+
+    public void setFields(List<Field> fields) {
+        this.fields = fields;
+    }
+
+    public List<ActionOverride> getActionOverrides() {
+        return actionOverrides;
+    }
+
+    public void setActionOverrides(List<ActionOverride> actionOverrides) {
+        this.actionOverrides = actionOverrides;
+    }
+
+    public List<ValidationRule> getValidationRules() {
+        return validationRules;
+    }
+
+    public void setValidationRules(List<ValidationRule> validationRules) {
+        this.validationRules = validationRules;
+    }
 }

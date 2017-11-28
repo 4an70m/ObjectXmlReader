@@ -36,4 +36,44 @@ public class ValidationRule {
         result = 31 * result + (errorMessage != null ? errorMessage.hashCode() : 0);
         return result;
     }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public String getErrorConditionFormula() {
+        return errorConditionFormula;
+    }
+
+    public void setErrorConditionFormula(String errorConditionFormula) {
+        this.errorConditionFormula = errorConditionFormula;
+    }
+
+    public String getErrorDisplayField() {
+        return errorDisplayField;
+    }
+
+    public void setErrorDisplayField(String errorDisplayField) {
+        this.errorDisplayField = errorDisplayField;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
 }

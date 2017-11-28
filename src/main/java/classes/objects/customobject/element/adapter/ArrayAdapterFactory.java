@@ -1,10 +1,9 @@
-package classes.objects.customobject.element;
+package classes.objects.customobject.element.adapter;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
-
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 

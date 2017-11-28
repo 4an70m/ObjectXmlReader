@@ -910,7 +910,7 @@
                 <sorted>false</sorted>
                 <value>
                     <fullName>Conditional Try and Buy</fullName>
-                    <default>false</default>
+                    <default>true</default>
                     <label>Conditional Try and Buy</label>
                 </value>
                 <value>

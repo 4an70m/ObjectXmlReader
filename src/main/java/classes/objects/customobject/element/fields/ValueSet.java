@@ -22,4 +22,12 @@ class ValueSet {
     public int hashCode() {
         return valueSetDefinition != null ? valueSetDefinition.hashCode() : 0;
     }
+
+    public ValueSetDefinition getValueSetDefinition() {
+        return valueSetDefinition;
+    }
+
+    public void setValueSetDefinition(ValueSetDefinition valueSetDefinition) {
+        this.valueSetDefinition = valueSetDefinition;
+    }
 }

@@ -2,6 +2,8 @@ package classes;
 
 import classes.objects.customobject.CustomObject;
 import com.google.gson.Gson;
+import org.json.JSONObject;
+import org.json.XML;
 
 import java.io.IOException;
 
@@ -18,9 +20,12 @@ public class Main {
         CustomObject customObject1 = new CustomObject(filePath1);
 
         CustomObject diffObject = (CustomObject) customObject1.diff(customObject2);
-        String jsonDiffObject = new Gson().toJson(diffObject.fields);
+        JSONObject jsonObject = new JSONObject(diffObject.fields);
+//        String jsonDiffObject = new Gson().toJson(diffObject.fields);
         System.out.println(jsonDiffObject);
-}
+        System.out.println(jsonObject.toString(4));
+        System.out.println(XML.toString(jsonObject));
+    }
 
 
 }

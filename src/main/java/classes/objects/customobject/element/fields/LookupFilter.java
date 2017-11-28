@@ -1,5 +1,7 @@
 package classes.objects.customobject.element.fields;
 
+import java.util.List;
+
 /**
  * Created by User on 28.11.2017.
  */
@@ -7,7 +9,7 @@ public class LookupFilter {
 
     public Boolean activer;
     public String booleanFilter;
-    public Object filterItems;
+    public List<FilterItem> filterItems;
 
     @Override
     public boolean equals(Object o) {

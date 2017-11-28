@@ -1,4 +1,4 @@
-package classes.objects.customobject.element;
+package classes.objects.customobject.element.adapter;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
@@ -32,14 +32,14 @@ public class ArrayAdapter<T> extends TypeAdapter<List<T>> {
 
         if (reader.peek() == JsonToken.BEGIN_OBJECT) {
 
-            T inning = (T) gson.fromJson(reader, adapterclass);
+            T inning = gson.fromJson(reader, adapterclass);
             list.add(inning);
 
         } else if (reader.peek() == JsonToken.BEGIN_ARRAY) {
 
             reader.beginArray();
             while (reader.hasNext()) {
-                T inning = (T) gson.fromJson(reader, adapterclass);
+                T inning = gson.fromJson(reader, adapterclass);
                 list.add(inning);
             }
             reader.endArray();

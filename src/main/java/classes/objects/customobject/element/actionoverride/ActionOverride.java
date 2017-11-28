@@ -33,4 +33,20 @@ public class ActionOverride {
                 ", type='" + type + '\'' +
                 '}';
     }
+
+    public String getActionName() {
+        return actionName;
+    }
+
+    public void setActionName(String actionName) {
+        this.actionName = actionName;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

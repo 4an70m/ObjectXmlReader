@@ -8,6 +8,11 @@ class ValueSetDefinition {
     public String sorted;
     public Object value;
 
+    public ValueSetDefinition(String sorted, Object value) {
+        this.sorted = sorted;
+        this.value = value;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -24,5 +29,21 @@ class ValueSetDefinition {
         int result = sorted != null ? sorted.hashCode() : 0;
         result = 31 * result + (value != null ? value.hashCode() : 0);
         return result;
+    }
+
+    public String getSorted() {
+        return sorted;
+    }
+
+    public void setSorted(String sorted) {
+        this.sorted = sorted;
+    }
+
+    public Object getValue() {
+        return value;
+    }
+
+    public void setValue(Object value) {
+        this.value = value;
     }
 }

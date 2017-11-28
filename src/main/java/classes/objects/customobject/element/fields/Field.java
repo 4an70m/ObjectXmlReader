@@ -1,5 +1,7 @@
 package classes.objects.customobject.element.fields;
 
+import java.util.List;
+
 /**
  * Created by User on 27.11.2017.
  */
@@ -130,6 +132,182 @@ public class Field extends Object{
         result = 31 * result + (deprecated != null ? deprecated.hashCode() : 0);
         result = 31 * result + (trackFeedHistory != null ? trackFeedHistory.hashCode() : 0);
         return result;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getFormula() {
+        return formula;
+    }
+
+    public void setFormula(String formula) {
+        this.formula = formula;
+    }
+
+    public String getInlineHelpText() {
+        return inlineHelpText;
+    }
+
+    public void setInlineHelpText(String inlineHelpText) {
+        this.inlineHelpText = inlineHelpText;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getRelationshipName() {
+        return relationshipName;
+    }
+
+    public void setRelationshipName(String relationshipName) {
+        this.relationshipName = relationshipName;
+    }
+
+    public String getDeleteConstraint() {
+        return deleteConstraint;
+    }
+
+    public void setDeleteConstraint(String deleteConstraint) {
+        this.deleteConstraint = deleteConstraint;
+    }
+
+    public String getRelationshipLabel() {
+        return relationshipLabel;
+    }
+
+    public void setRelationshipLabel(String relationshipLabel) {
+        this.relationshipLabel = relationshipLabel;
+    }
+
+    public String getFormulaTreatBlanksAs() {
+        return formulaTreatBlanksAs;
+    }
+
+    public void setFormulaTreatBlanksAs(String formulaTreatBlanksAs) {
+        this.formulaTreatBlanksAs = formulaTreatBlanksAs;
+    }
+
+    public String getReferenceTo() {
+        return referenceTo;
+    }
+
+    public void setReferenceTo(String referenceTo) {
+        this.referenceTo = referenceTo;
+    }
+
+    public String getVisibleLines() {
+        return visibleLines;
+    }
+
+    public void setVisibleLines(String visibleLines) {
+        this.visibleLines = visibleLines;
+    }
+
+    public Boolean getRequired() {
+        return required;
+    }
+
+    public void setRequired(Boolean required) {
+        this.required = required;
+    }
+
+    public Boolean getTrackTrending() {
+        return trackTrending;
+    }
+
+    public void setTrackTrending(Boolean trackTrending) {
+        this.trackTrending = trackTrending;
+    }
+
+    public Boolean getUnique() {
+        return unique;
+    }
+
+    public void setUnique(Boolean unique) {
+        this.unique = unique;
+    }
+
+    public Boolean getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(Boolean externalId) {
+        this.externalId = externalId;
+    }
+
+    public Boolean getTrackHistory() {
+        return trackHistory;
+    }
+
+    public void setTrackHistory(Boolean trackHistory) {
+        this.trackHistory = trackHistory;
+    }
+
+    public ValueSet getValueSet() {
+        return valueSet;
+    }
+
+    public void setValueSet(ValueSet valueSet) {
+        this.valueSet = valueSet;
+    }
+
+    public Object getLookupFilter() {
+        return lookupFilter;
+    }
+
+    public void setLookupFilter(Object lookupFilter) {
+        this.lookupFilter = lookupFilter;
+    }
+
+    public Integer getScale() {
+        return scale;
+    }
+
+    public void setScale(Integer scale) {
+        this.scale = scale;
+    }
+
+    public Integer getLength() {
+        return length;
+    }
+
+    public void setLength(Integer length) {
+        this.length = length;
+    }
+
+    public Integer getPrecision() {
+        return precision;
+    }
+
+    public void setPrecision(Integer precision) {
+        this.precision = precision;
     }
 }
 

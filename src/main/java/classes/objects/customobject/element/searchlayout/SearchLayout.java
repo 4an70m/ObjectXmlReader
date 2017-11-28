@@ -39,4 +39,28 @@ public class SearchLayout {
                 ", searchFilterFields=" + searchFilterFields +
                 '}';
     }
+
+    public Object getCustomTabListAdditionalFields() {
+        return customTabListAdditionalFields;
+    }
+
+    public void setCustomTabListAdditionalFields(Object customTabListAdditionalFields) {
+        this.customTabListAdditionalFields = customTabListAdditionalFields;
+    }
+
+    public Object getLookupDialogsAdditionalFields() {
+        return lookupDialogsAdditionalFields;
+    }
+
+    public void setLookupDialogsAdditionalFields(Object lookupDialogsAdditionalFields) {
+        this.lookupDialogsAdditionalFields = lookupDialogsAdditionalFields;
+    }
+
+    public Object getSearchFilterFields() {
+        return searchFilterFields;
+    }
+
+    public void setSearchFilterFields(Object searchFilterFields) {
+        this.searchFilterFields = searchFilterFields;
+    }
 }
