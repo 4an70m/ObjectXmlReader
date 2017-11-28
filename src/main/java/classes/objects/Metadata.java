@@ -32,6 +32,7 @@ public abstract class Metadata {
         }
     }
 
+
     private String readFile(File file) throws IOException {
         StringBuilder result = new StringBuilder();
         BufferedReader brs = new BufferedReader(new FileReader(file));
@@ -43,8 +44,6 @@ public abstract class Metadata {
 
         return result.toString();
     }
-
-    public abstract Metadata diff(Metadata metadata) throws CustomObject.MetadataException;
 
     public class MetadataException extends Exception {
 
