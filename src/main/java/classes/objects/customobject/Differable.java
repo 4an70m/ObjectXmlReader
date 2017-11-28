@@ -7,6 +7,6 @@ import classes.objects.Metadata;
  */
 public interface Differable {
 
-    public Metadata diff(Metadata metadata);
+    public Metadata diff(Metadata metadata) throws IllegalAccessException;
 
 }

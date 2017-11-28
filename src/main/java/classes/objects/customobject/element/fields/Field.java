@@ -1,9 +1,9 @@
-package classes.objects.customobject.fields;
+package classes.objects.customobject.element.fields;
 
 /**
  * Created by User on 27.11.2017.
  */
-public class Field {
+public class Field extends Object{
 
     public String fullName;
     public String label;
