@@ -17,6 +17,9 @@ import java.util.Set;
  */
 public class CustomObject extends Metadata implements Differable {
 
+    public final String XML_HEADER = "<?xml version=\"1.0\"?>\n" +"<CustomObject xmlns=\"http://soap.sforce.com/2006/04/metadata\">";
+    public final String XML_FOOTER = "</CustomObject>";
+
     public final CustomObjectParsed fields;
 
 
@@ -36,7 +39,7 @@ public class CustomObject extends Metadata implements Differable {
         if (this.getJsonObject() == null) {
             this.constructJsonObject(this.fields);
         }
-        return XML.toString(this.getJsonObject());
+        return XML_HEADER + XML.toString(this.getJsonObject()) + XML_FOOTER;
     }
 
     @Override
