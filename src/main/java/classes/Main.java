@@ -10,13 +10,13 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException, CustomObject.MetadataException, IllegalAccessException {
-        String filePath2 = "example\\object\\Account-full.object";
-        CustomObject customObject2 = new CustomObject(filePath2);
+        String originalPath = "C:\\Users\\User\\Documents\\4an70m\\src\\objects\\Quote2.object";
+        CustomObject originalObject = new CustomObject(originalPath);
 
-        String filePath1 = "example\\object\\Account-full2.object";
-        CustomObject customObject1 = new CustomObject(filePath1);
+        String newPath = "C:\\Users\\User\\Documents\\4an70m\\src\\objects\\Quote.object";
+        CustomObject newObject = new CustomObject(newPath);
 
-        CustomObject diffObject = (CustomObject) customObject1.diff(customObject2);
+        CustomObject diffObject = (CustomObject) originalObject.diff(newObject);
         System.out.println(diffObject.toXml());
 
     }
