@@ -4,6 +4,8 @@ import classes.objects.Metadata;
 import classes.objects.customobject.element.adapter.ArrayAdapterFactory;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.json.JSONObject;
+import org.json.XML;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,6 +19,7 @@ public class CustomObject extends Metadata implements Differable {
 
     public final CustomObjectParsed fields;
 
+
     public CustomObject () {
         this.fields = new CustomObjectParsed();
     }
@@ -25,6 +28,15 @@ public class CustomObject extends Metadata implements Differable {
         super(filePath);
         Gson gson = new GsonBuilder().registerTypeAdapterFactory(new ArrayAdapterFactory()).create();
         this.fields = gson.fromJson(getObjectBody(), CustomObjectParsed.class);
+    }
+
+
+    @Override
+    public String toXml() {
+        if (this.getJsonObject() == null) {
+            this.constructJsonObject(this.fields);
+        }
+        return XML.toString(this.getJsonObject());
     }
 
     @Override
@@ -46,6 +58,7 @@ public class CustomObject extends Metadata implements Differable {
         }
         return result;
     }
+
 
     private Boolean compareSimpleField(Object thisValue, Object compareToValue) {
         return (thisValue != null && !thisValue.equals(compareToValue))

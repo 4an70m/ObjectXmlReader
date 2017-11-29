@@ -1,5 +1,6 @@
 package classes.objects.customobject;
 
+import classes.objects.customobject.element.JSONable;
 import classes.objects.customobject.element.actionoverride.ActionOverride;
 import classes.objects.customobject.element.fields.Field;
 import classes.objects.customobject.element.lsitview.ListView;
@@ -7,7 +8,6 @@ import classes.objects.customobject.element.namefield.NameField;
 import classes.objects.customobject.element.searchlayout.SearchLayout;
 import classes.objects.customobject.element.validationrule.ValidationRule;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +15,7 @@ import java.util.List;
  */ /*
  * Data model
  */
-public final class CustomObjectParsed {
+public final class CustomObjectParsed implements JSONable {
 
     public Boolean allowInChatterGroups;
     public String compactLayoutAssignment;

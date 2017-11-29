@@ -1,6 +1,7 @@
 package classes.objects;
 
-import classes.objects.customobject.CustomObject;
+import classes.objects.customobject.element.JSONable;
+import com.google.gson.Gson;
 import org.json.JSONObject;
 import org.json.XML;
 
@@ -14,7 +15,8 @@ import java.io.IOException;
  */
 public abstract class Metadata {
 
-    protected JSONObject jsonObject;
+    private JSONObject jsonObject;
+
 
     public Metadata() {}
 
@@ -33,17 +35,17 @@ public abstract class Metadata {
     }
 
 
-    private String readFile(File file) throws IOException {
-        StringBuilder result = new StringBuilder();
-        BufferedReader brs = new BufferedReader(new FileReader(file));
-
-        String line = null;
-        while ((line = brs.readLine()) != null) {
-            result.append(line);
-        }
-
-        return result.toString();
+    public void constructJsonObject(JSONable toJsonObject) {
+        String jsonObject = new Gson().toJson(toJsonObject);
+        this.jsonObject = new JSONObject(jsonObject);
     }
+
+    public JSONObject getJsonObject() {
+        return this.jsonObject;
+    }
+
+    public abstract String toXml();
+
 
     public class MetadataException extends Exception {
 
@@ -55,7 +57,17 @@ public abstract class Metadata {
         }
     }
 
-    public JSONObject getJsonObject() {
-        return jsonObject;
+
+
+    private String readFile(File file) throws IOException {
+        StringBuilder result = new StringBuilder();
+        BufferedReader brs = new BufferedReader(new FileReader(file));
+
+        String line = null;
+        while ((line = brs.readLine()) != null) {
+            result.append(line);
+        }
+
+        return result.toString();
     }
 }
